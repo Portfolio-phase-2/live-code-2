@@ -1,0 +1,28 @@
+{
+    "name": "talkasrul-js",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "bcryptjs": "^2.4.3",
+        "bycjwt": "^1.0.1",
+        "cors": "^2.8.4",
+        "dotenv": "^6.0.0",
+        "express": "~4.16.0",
+        "mongoose": "^5.2.13",
+        "morgan": "~1.9.0",
+        "multer": "^1.3.1"
+    },
+    "devDependencies": {
+        "eslint": "^5.6.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0"
+    }
+}
