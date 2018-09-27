@@ -48,8 +48,8 @@ module.exports = {
   deleteById: (req, res) => {
     Twit.findById({ _id: req.params.id, owner: req.decoded._id })
       .then(result => {
-        let twit = new Twit({ _id: result._id })
-        twit.remove()
+        let hapus = new Twit({ _id: result._id })
+        hapus.remove()
           .then(response => res.status(200).json(response))
           .catch(err => res.status(500).json(err))
       })

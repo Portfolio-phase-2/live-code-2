@@ -1,9 +1,8 @@
 <template>
   <div class="mb-3">
-    <h2>Person</h2>
-    {{people}}
-    <ul>
-      <li></li>
+    <ul class="list-group">
+      <li class="list-group-item text-center"><strong>Who To Follow</strong></li>
+      <a href="#" class="list-group-item" v-for="org in people" :key="org._key" v-if="org._id!==user._id"><small class="btn btn-sm btn-success mr-2">Follow </small>{{org.name}}</a>
     </ul>
   </div>
 </template>
@@ -34,7 +33,10 @@ export default {
           token: localStorage.getItem('token')
         }
       })
-        .then(found => this.people(found.data))
+        .then(found => {
+          this.people = found.data
+          console.log(found.data)
+        })
         .catch(() => console.log(`err`))
     }
   }

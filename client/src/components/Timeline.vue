@@ -39,13 +39,9 @@ export default {
           token: localStorage.getItem('token')
         }
       })
-        .then(found => this.getTwits())
+        .then(() => this.getTwits())
         .catch(() => console.log(`err`))
     }
   }
 }
 </script>
-
-<style>
-
-</style>

@@ -51,7 +51,7 @@ module.exports = {
       .catch(err => res.status(500).json(err))
   },
   getAllRand: (req, res) => {
-    User.find({}, { _id: !req.decoded._id })
+    User.find({})
       .then(response => res.status(200).json(response))
       .catch(err => res.status(500).json(err))
   }
