@@ -19,17 +19,21 @@ export default {
     ...mapState(['user'])
   },
   methods: {
-    ...mapActions([]),
+    ...mapActions(['getTwits']),
     sendTwit () {
       axios({
         url: url + `/twits`,
         method: 'post',
+        data: {
+          content: this.content
+        },
         headers: {
           token: localStorage.getItem('token')
         }
       })
         .then(() => {
-          this.
+          this.content = ''
+          this.getTwits()
         })
     }
   }

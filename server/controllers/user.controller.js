@@ -41,8 +41,11 @@ module.exports = {
           name: response.name,
           _id: response._id,
           username: response.username,
-          email: response.email
+          email: response.email,
+          followings: response.followings,
+          twits: response.twits
         }
+        console.log(response)
         res.status(200).json(user)
       })
       .catch(err => res.status(500).json(err))

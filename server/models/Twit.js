@@ -8,7 +8,7 @@ const twitSchema = new Schema({
 }, { timestamps: true })
 
 twitSchema.pre('save', function (next) {
-  User.updateOne({ $push: { twits: this._id } })
+  User.update({ $push: { twits: this._id } })
     .then(response => {
       next()
     })

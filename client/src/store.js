@@ -58,13 +58,16 @@ export default new Vuex.Store({
         })
         .catch(() => { commit('setUser', {}) })
     },
-    getTwits ({ commit }, payload) {
+    getTwits ({ commit, dispatch }, payload) {
       commit('setTwits', payload)
       axios({
         url: url + `/twits`,
         method: 'get'
       })
-        .then(found => commit('setTwits', found.data))
+        .then(found => {
+          commit('setTwits', found.data)
+          dispatch('checkLogin')
+        })
         .catch(() => console.log(`err`))
     }
   }

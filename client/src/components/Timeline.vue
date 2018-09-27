@@ -1,8 +1,6 @@
 <template>
-  <div>
+  <div class="mt-3">
     <div class="card pt-3 pl-3  pb-3 mb-3" v-for="twit in twits" :key="twit._id">
-      {{twit.owner}}
-      <br>
       {{twit.content}}
     </div>
   </div>
