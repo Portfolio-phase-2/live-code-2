@@ -69,6 +69,9 @@ export default new Vuex.Store({
           dispatch('checkLogin')
         })
         .catch(() => console.log(`err`))
+    },
+    searching ({ commit }, payload) {
+      commit('setTwits', payload)
     }
   }
 })
